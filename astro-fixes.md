@@ -43,7 +43,7 @@ export default defineConfig({
 });
 ```
 
-Затем: строка `Sitemap:` в robots → `/sitemap.xml`. Если сайт уже в GSC/Вебмастере со старым `sitemap-index.xml` — переотправить новый (скиллы `google-search-console`, `yandex-webmaster`).
+Затем: строка `Sitemap:` в robots → `/sitemap.xml`. Если сайт уже в GSC/Вебмастере со старым `sitemap-index.xml` — переотправить новый (через скиллы, если есть, иначе вручную).
 
 `lastmod`: только если есть реальные даты (например `updated` в content collections) — через `serialize(item)` в `sitemap({...})`. Дата сборки на всех страницах бесполезна.
 
@@ -106,7 +106,7 @@ magick -background none favicon.svg -resize 512x512 icon-512.png
 
 ## og:image
 
-1200×630, JPG/PNG (не SVG, не AVIF), < 1 MB желательно. Сгенерировать — скилл `generate`. Посмотри картинку глазами (Read), прежде чем считать проверку пройденной.
+1200×630, JPG/PNG (не SVG, не AVIF), < 1 MB желательно. Сгенерировать — любым генератором картинок или свёрсткой. Посмотри картинку глазами (Read), прежде чем считать проверку пройденной.
 
 ## llms.txt
 
@@ -135,7 +135,7 @@ magick -background none favicon.svg -resize 512x512 icon-512.png
 
 ## Сервер (nginx): редиректы, HSTS, сжатие
 
-Правится на VPS — через скилл `vps-admin`, не вслепую.
+Правится на сервере — аккуратно, с `nginx -t` перед reload.
 
 ```nginx
 server { listen 80; listen [::]:80; server_name example.com www.example.com; return 301 https://example.com$request_uri; }

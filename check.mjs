@@ -395,7 +395,7 @@ if (ld.length) add(G.ld, 'nice', types.some(t => /Organization|LocalBusiness|Per
 // ---- аналитика / верификация ----
 const hasYM = /mc\.yandex\.(ru|com)\/(metrika|watch)|ym\(\s*\d+/.test(html);
 const hasGA = /googletagmanager\.com\/(gtag|gtm)|gtag\(\s*['"]config/.test(html);
-add(G.an, 'should', hasYM || hasGA, `счётчики: ${[hasYM && 'Яндекс.Метрика', hasGA && 'Google Analytics/GTM'].filter(Boolean).join(', ') || 'не найдено'}`, 'поставить Метрику (скилл yandex-metrika)');
+add(G.an, 'should', hasYM || hasGA, `счётчики: ${[hasYM && 'Яндекс.Метрика', hasGA && 'Google Analytics/GTM'].filter(Boolean).join(', ') || 'не найдено'}`, 'поставить Яндекс.Метрику или GA');
 const ver = [meta(html, 'yandex-verification') && 'yandex-verification', meta(html, 'google-site-verification') && 'google-site-verification'].filter(Boolean);
 info(G.an, ver.length ? `meta-верификация: ${ver.join(', ')}` : 'meta-верификации нет (ок, если подтверждено через DNS)');
 
