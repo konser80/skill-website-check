@@ -83,12 +83,12 @@ const ogImage = new URL(image, Astro.site).href; // og:image только абс
 </head>
 ```
 
-Title/description — уникальные на каждой странице, передаются пропсами, не дефолтом из layout.
+`Brand`, `lang="ru"`, `ru_RU`, `#ffffff` — заглушки, подставь значения проекта. Title/description — уникальные на каждой странице, передаются пропсами, не дефолтом из layout.
 
 ## Иконки
 
 Набор в `public/`: `favicon.ico` (32×32), `favicon.svg`, `apple-touch-icon.png` (180×180, без прозрачности), `icon-192.png`, `icon-512.png`, `site.webmanifest`.
-Из SVG-исходника (ImageMagick):
+Из SVG-исходника (ImageMagick; если нет — `brew install imagemagick` / `apt install imagemagick`, или любой генератор фавиконок):
 
 ```bash
 magick -background none favicon.svg -resize 32x32 favicon.ico

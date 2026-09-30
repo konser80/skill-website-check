@@ -20,7 +20,7 @@ If a user gave you this repository link and asked you to install the skill, do e
    If the target folder already exists, run `git -C <folder> pull` instead of cloning.
    No git? Download `https://github.com/konser80/skill-website-check/archive/refs/heads/master.zip` and unpack it so that `SKILL.md` sits directly in `<skills dir>/website-check/`.
 
-3. **Verify:** `node <skills dir>/website-check/check.mjs https://astro.build` should print a grouped report ending with `Итого: ❌ must … · ⚠️ should … · 💡 nice …`. Network access is required for live checks.
+3. **Verify:** `node <skills dir>/website-check/check.mjs https://astro.build` should print a grouped report ending with `Итого: ❌ must … · ⚠️ should … · 💡 nice …`. Network access is required for live checks. Exit code `1` just means the checked site has ❌ issues — the install is still fine; any report at all means success.
 4. **Tell the user** the skill is installed and that the agent may need a restart (Claude Code: start a new session) to pick it up. Then they can say “check my site https://…” / «проверь сайт …».
 
 ## Usage
